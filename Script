@@ -1,0 +1,267 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local TextButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextButton_2 = Instance.new("TextButton")
+
+local hg = false
+local levat = false
+local us = false
+
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.0610425249, 0, 0.0939490423, 0)
+Frame.Size = UDim2.new(0, 218, 0, 225)
+
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.Position = UDim2.new(0.0871559605, 0, 0.155555561, 0)
+ScrollingFrame.Size = UDim2.new(0, 187, 0, 136)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 80, 0)
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+TextButton.Parent = ScrollingFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(117, 117, 117)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.Size = UDim2.new(0, 155, 0, 10)
+TextButton.Visible = false
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 10.000
+TextButton.TextStrokeColor3 = Color3.fromRGB(250, 250, 250)
+TextButton.TextStrokeTransparency = 0.000
+TextButton.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 175, 0)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(-0.00129664713, 0, -0.000140406293, 0)
+TextLabel.Size = UDim2.new(0, 218, 0, 25)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Mesh finder GUI"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 30)
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.Position = UDim2.new(0.0825688094, 0, 0.804444432, 0)
+TextButton_2.Size = UDim2.new(0, 180, 0, 30)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "update list"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 14.000
+
+local function FNDR_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local button = script.Parent.ScrollingFrame.TextButton
+	button.Parent = nil
+	button.Name = "slaves"
+	local function updatelist()
+		for i, v in script.Parent.ScrollingFrame:GetDescendants() do
+			if v:IsA("TextButton") then
+				v:Destroy()
+			end
+		end
+	
+		local function fireremote(partc, ...)
+   if partc:IsA("SpecialMesh") then
+local blackholep = Instance.new("Part", workspace)
+ blackholep.Size = Vector3.new(0, 0, 0)
+ blackholep.Anchored = true
+ blackholep.CanCollide = false
+ blackholep.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5)
+
+ifdt = Instance.new("SpecialMesh", blackholep)
+ifdt.Name = "CopiedMesh"
+ifdt.TextureId = partc.TextureId
+ifdt.MeshId = partc.MeshId
+ifdt.Scale = partc.Scale
+pcall(function()
+idft.VertexColor = partc.VertexColor
+end)
+
+game.Debris:AddItem(blackholep, 5)
+if levat then
+setclipboard(partc.MeshId)
+end
+if hg then
+ print("SpecialMesh: ", partc.Name)
+ print("Mesh: ", partc.MeshId)
+ print("Texture: ", partc.TextureId)
+ print("Scale: ", partc.Scale)
+  pcall(function()
+ print("VertexColor: ", partc.VertexColor)
+  end)
+end
+ elseif partc:IsA("MeshPart") then
+local vgh = Instance.new("MeshPart", workspace)
+vgh.MeshId = partc.MeshId
+vgh.TextureID = partc.TextureID
+vgh.Size = partc.Size
+vgh.Anchored = true
+vgh.CanCollide = false
+vgh.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5)
+game.Debris:AddItem(vgh, 5)
+
+if levat then
+setclipboard(partc.MeshId)
+end
+if hg then
+ print("MeshPart: ", partc.Name)
+ print("MeshId: ", partc.MeshId)
+ print("TextureID: ", partc.TextureID)
+ print("Size: ", part.Size)
+end
+   end
+end
+  for i, v in pairs(game:GetDescendants()) do
+   if v:IsA("SpecialMesh") or v:IsA("MeshPart") and v.Name ~= "CopiedMesh" and v.MeshId ~= "" then
+local meshIdSet = {}
+for _, button in pairs(script.Parent.ScrollingFrame:GetChildren()) do
+    if button:IsA("TextButton") then
+        local meshId = button.Text
+        if meshIdSet[meshId] then
+            button:Destroy()
+        else
+            meshIdSet[meshId] = true
+        end
+    end
+end
+    local clonebutton = button:Clone()
+    clonebutton.Parent = script.Parent.ScrollingFrame
+    clonebutton.Visible = true
+ if v:IsA("SpecialMesh") then
+    clonebutton.Text = tostring(v.MeshId)
+ elseif v:IsA("MeshPart") then
+    clonebutton.Text = tostring(v.MeshId)
+ end
+    clonebutton.MouseButton1Click:Connect(function()
+     fireremote(v)
+    end)
+   end
+  end
+	end
+	script.Parent.TextButton.MouseButton1Click:Connect(updatelist)
+end
+coroutine.wrap(FNDR_fake_script)()
+local function SGRWUDK_fake_script() -- Frame.DragScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {
+			Position = position
+		}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(SGRWUDK_fake_script)()
+
+Button = Instance.new("TextButton")
+Button.Name = "Button"
+Button.Size = UDim2.new(0.14, 0.14, 0.14, 5)
+Button.Position = UDim2.new(-0.14, 0, 0.2, 0)
+Button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextScaled = true
+Button.Text = "Copy Mesh"
+Button.Parent = Frame
+
+Button.MouseButton1Click:Connect(function()
+levat = not levat
+ if levat then
+ Button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+ else
+ Button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+ end
+end)
+
+Button1 = Instance.new("TextButton")
+Button1.Name = "Button"
+Button1.Size = UDim2.new(0.14, 0.14, 0.14, 5)
+Button1.Position = UDim2.new(-0.14, 0, 0.4, 0)
+Button1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Button1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button1.TextScaled = true
+Button1.Text = "Print Information"
+Button1.Parent = Frame
+
+Button1.MouseButton1Click:Connect(function()
+hg = not hg
+ if hg then
+ Button1.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+ else
+ Button1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+ end
+end)
+
+Button2 = Instance.new("TextButton")
+Button2.Name = "Button"
+Button2.Size = UDim2.new(0.14, 0.14, 0.14, 5)
+Button2.Position = UDim2.new(-0.14, 0, 0.6, 0)
+Button2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button2.TextScaled = true
+Button2.Text = "Clear all Meshes"
+Button2.Parent = Frame
+
+Button2.MouseButton1Click:Connect(function()
+Button2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Tweenn = game:GetService("TweenService"):Create(Button2, TweenInfo.new(1, Enum.EasingStyle.Linear), {
+        BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    })
+    Tweenn:Play()
+
+  for i, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("SpecialMesh") then
+            v:Destroy()
+          elseif v:IsA("MeshPart") then
+            v.MeshId = ""
+            v.TextureID = ""
+        end
+    end
+end)
